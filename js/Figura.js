@@ -1,5 +1,6 @@
 class Figura{
-    constructor(ctx, x, y, color){
+    constructor(nombre, ctx, x, y, color){
+        this.nombre = nombre;
         this.ctx = ctx;
         this.x = x;
         this.y = y;
@@ -12,6 +13,10 @@ class Figura{
     }
     desplazarY(valor) {
         this.y = this.y + valor;
+    }
+
+    getNombre(){
+        return this.nombre;
     }
 
     setEstilo(seleccionada) {

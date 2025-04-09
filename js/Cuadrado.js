@@ -1,7 +1,7 @@
 class Cuadrado extends Figura{;
 
     constructor(ctx, posX, posY, color, anchoAltura) {
-        super(ctx, posX, posY, color);
+        super("Cuadrado", ctx, posX, posY, color);
         this.width = anchoAltura;
         this.height = anchoAltura;
     }

@@ -1,7 +1,7 @@
 class Circulo extends Figura {
 
     constructor(ctx, posX, posY,  color, radio) {
-        super(ctx, posX, posY, color);
+        super("Circulo", ctx, posX, posY, color);
         this.radio = radio;
     }
 

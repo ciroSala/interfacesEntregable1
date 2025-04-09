@@ -1,6 +1,6 @@
 class Rectangulo extends Figura {
     constructor(ctx, posX, posY, color, width) {
-        super(ctx, posX, posY, color);
+        super("Rectangulo", ctx, posX, posY, color);
         this.width = width;
         this.height = Math.ceil(width/2);
     }

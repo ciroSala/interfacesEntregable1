@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let mouseUp = false;
     let mouseDown = false;
     let figuraDblclick = null;
+    let p = document.getElementById("p");
 
     document.addEventListener("dblclick", (e) => {
         if(figuraDblclick!=null){
@@ -24,12 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 figuraDblclick = buscarFigura(e.offsetX, e.offsetY);
                 figuraDblclick.setEstilo(true);
                 dibujarFiguras();
+                p.innerHTML = "Esta seleccionando un " + figuraDblclick.getNombre();
             }
         }else{
             figuraDblclick = buscarFigura(e.offsetX, e.offsetY);
             if(figuraDblclick){
                 figuraDblclick.setEstilo(true);
                 figuraDblclick.dibujar();
+                p.innerHTML = "Esta seleccionando un " + figuraDblclick.getNombre();
             }
         }
 
@@ -47,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(figuraSeleccionada){
             figuraSeleccionada.setEstilo(true);
             figuraSeleccionada.dibujar();
+            p.innerHTML = "Esta seleccionando un " + figuraSeleccionada.getNombre();
         }
         mouseDown = true;
         mouseUp = false;
@@ -60,6 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
             dibujarFiguras();
         }
         figuraSeleccionada = null;
+        if(figuraDblclick!=null){
+            p.innerHTML = "Esta seleccionando un " + figuraDblclick.getNombre();
+        }else{
+            p.innerHTML = " ";
+        }
     }); 
 
     canvas.addEventListener('mousemove', (e) => {
@@ -105,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'Backspace':
                     figuraDblclick.setEstilo(false);
                     figuraDblclick = null;
+                    p.innerHTML = "";
                 break;
                 default:
                     break;
